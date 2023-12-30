@@ -1,3 +1,2 @@
-
-#Codeit Sprint - Weekly Paper 
-##Owned by Sedong Kim
+# Codeit Sprint - Weekly Paper 
+Sedong Kim's Weekly Paper
