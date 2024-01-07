@@ -20,7 +20,7 @@ About SementicTag and Positions
 **Position**은 지정된 블록의 배치 형태를 지정하는 구문이며, 다음과 같은 형태가 있다.
  
 1. static
-    - 현배 Block을 원래 있어야 할 위치에 배치하며, 별도의 Position을 지정하지 않을 경우의 기본 상태이다.
+    - 현재 Block을 원래 있어야 할 위치에 배치하며, 별도의 Position을 지정하지 않을 경우의 기본 상태이다.
 2. Relative
     - 원래 위치를 기준으로 배치하며, 별다른 조작없이는 Static과 비슷하나 Top, Left 등 위치를 옮기는 구문과 같이 사용할 경우 원래 있었던 공간은 Block이 그대로 있는 것 처럼 간주하고 해당 Block만 재배치한다.
 4. Absolute
