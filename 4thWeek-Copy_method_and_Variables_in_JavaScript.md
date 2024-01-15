@@ -3,13 +3,61 @@
 About Copy method and Variables in JavaScript
 
 ## Copy Method
+자바 스크립트에는 자료형은 두가지로, 하나는 [String, Number, Boolean, Null, Undefined]의 기본형, 나머지 하나는 Object의 참조형이다. 
 
+이중 참조형은 기본형과 달리 변수 / 상수가 값 자체를 지니는 것이 아닌, 객체 자료가 담긴 주소를 할당받는다. 
+즉, const를 통해 상수 배열을 지정했을 지라도, 이는 객체 자체를 저장한 것이 아닌, 주소를 할당받은 것이기 때문에 객체 자료값에 변동이 있을 경우, const로 지정했을 지라도 변동이 있을 수 있다는 뜻이다.
+
+다른 변수에 할당 기호(=)를 통해 같은 객체를 참조하도록 할 수 있으며, 이 과정에서 추가적인 메소드를 통해 객체 주소를 그대로 참조할 것인지, 
+또는 새로운 객체를 만들 것인지에 따라 얕은 복사(shallowCopy)와 깊은 복사(deepCopy)로 나뉜다.
 
 ### 얕은 복사(shallowCopy)
-  
-### 깊은 복사(deepCopy)
+얕은 복사는 객체의 주소를 복사하는 것으로, 단순히 주소를 복사한 것이므로, const를 통해 상수 객체를 지정했을 지라도 객체의 변형에 따라 const값이 변형 될 수 있다.
+이는 객체 자체가 변형된 것이므로, const에 할당된 주소가 변형된 것이 아니다.
 
-   
+단순 할당 연산자를 이용할 때에는 얕은 복사가 기본으로 설정되어 있으며, 이는 객체 데이터를 과도하게 생성하여 메모리 포화 상태를 방지하기 위함이다.
+
+얕은 복사의 객체 변환성을 보여주는 예제는 다음과 같다.
+
+  > const ANIMAL = [Chiwawa, Scotish, Sphinx, Maincoon];
+  > 
+  > let Cat = ANIMAL
+  >
+  > Cat.shift();
+  >
+  > console.log(ANIMAL);
+  > 
+  > console.log(Cat);
+  >
+  > 결과
+  >
+  > [Scotish, Sphinx, Maincoon]
+  >
+  > [Scotish, Sphinx, Maincoon]
+       
+### 깊은 복사(deepCopy)
+깊은 복사(deepCopy)는 원본 객체와 동일한 새로운 객체를 만들어 주소를 새로 할당하여 독립성을 유지하는 것으로, 원본 객체의 변동이 있더라도, 깊은 복사를 통해 복제된 개체는 값이 변동하지 않는다.
+
+이는 깊은 복사를 통해 새로 생성된 개체는 같은 주소를 공유하지 않기 때문으로, 형식은 동일하지만 내용이 다른 객체를 생성할 때에 사용한다.
+
+자바 스크립트에서 객체의 깊은 복사는 slice 메소드를 통해 생성 가능하다. 간략한 예제는 다음과 같다.
+  
+  > const ANIMAL = [Chiwawa, Scotish, Sphinx, Maincoon];
+  > 
+  > let Cat = ANIMAL.slice();
+  >
+  > Cat.shift();
+  >
+  > console.log(ANIMAL);
+  > 
+  > console.log(Cat);
+  >
+  > 결과
+  >
+  > [Chiwawa, Scotish, Sphinx, Maincoon]
+  >
+  > [Scotish, Sphinx, Maincoon]
+     
 ## Form of Varialbes
 자바스크립트는 현재 let, const를 이용하여 변수, 상수를 지정하나, 그 이전에는 var(riable) 예약어를 이용하여 변수를 지정하던 때가 있었다.
 
