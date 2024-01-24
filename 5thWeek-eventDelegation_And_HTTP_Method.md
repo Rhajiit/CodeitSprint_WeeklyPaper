@@ -69,4 +69,30 @@ StopPropagation을 사용할 경우 event bubbling이 일어나지 않아 해당
 그러므로 stopPropagation은 완전히 통제된 상황이 아닌이상 사용하지 않아야 한다.
 
 ## HTTP Method
+HTTP Method란, 클라이언트 - 서버 구조에서 서버 구조가 수행할 동작을 지정하여 Request와 Response가 이루어지는 방식이다.
 
+이는 리소스와 동작을 분리하여 URL로 하여금 리소스만 식별하게 하기 위함으로, 종류는 크게 8가지가 있다.
+> Get - 리소스 조회
+> Post - 데이터 추가/등록
+> Put - 리소스 대체/수정 (미보유시 새로 생성)
+> Delete - 리소스 삭제
+> Patch - 리소스 부분 변경
+> Head - Get과 유사하나 HTTP의 Body부분을 제외
+> Options - 서버와 브라우저간의 통신옵션 확인
+> Connect - 대상으로 식별되는 서버에 대한 연결 요청
+
+### Get
+
+### Post
+
+### put
+
+### Delete
+
+### Patch
+
+### Head
+
+### Options
+
+### Connect
